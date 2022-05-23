@@ -12,7 +12,7 @@ function Navbar({user, setUser}) {
       <header>
       <div class="logo">
         <h1 class="logo-name">The Backlog </h1>
-        <h5 class="logo-sub">" "I swear I will check it out once I get through my backlog." "</h5>
+        <h5 class="logo-sub">"I swear I will check that out once I get through my backlog."</h5>
       </div>
       
     </header>
@@ -28,8 +28,8 @@ function Navbar({user, setUser}) {
       <nav class="nav-bar">
 
         <Link to="/">||Home</Link>
-        <Link to="/gameslist">||Games</Link>
-        <Link to="/comments">||Comments</Link>
+        <Link to="/games">||Games</Link>
+        <Link to="/backlog">||Backlog</Link>
         <Link to="/" onClick={handleLogout}>||Logout||</Link>
       </nav>
     </header>

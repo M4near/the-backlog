@@ -7,6 +7,7 @@ class CreateListItems < ActiveRecord::Migration[6.1]
       t.boolean :completed
       t.date :deadline
       t.integer :time_played
+      t.integer :rank
 
       t.timestamps
     end
