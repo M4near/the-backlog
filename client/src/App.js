@@ -6,11 +6,15 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import './App.css';
 import GamesList from "./Components/GamesList";
+import Backlog from "./Components/Backlog";
 import Home from "./Components/Home";
+import GamesPage from "./Components/GamesPage";
+import GameCard from "./Components/GameCard";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [commentData, setCommentData] = useState([]);
+  const [gamesData, setGamesData] = useState([]);
+  const [listItemsData, setListItemsData] = useState([]);
   const history = useHistory();
   // const location = useLocation();
   
@@ -25,14 +29,20 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('/comments')
+    fetch('/games')
       .then(res => res.json())
-      .then((data) => setCommentData(data))
+      .then((data) => setGamesData(data))
+  }, [])
+
+  useEffect(() => {
+    fetch('/list_items')
+      .then(res => res.json())
+      .then((data) => setListItemsData(data))
   }, [])
 
 
-  const addComment = (formData) => {
-    fetch('/comments', {
+  const addGame = (formData) => {
+    fetch('/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,13 +51,28 @@ function App() {
       body: JSON.stringify(formData)
     })
       .then(res => res.json())
-      .then(newComment => {
-        setCommentData(commentData.concat(newComment))
+      .then(newGame => {
+        setGamesData(gamesData.concat(newGame))
       });
   }
 
-  const updateComment = (id, formData) => {
-    fetch(`/comments/${id}`, {
+  const addListItem = (formData) => {
+    fetch('/list_items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(newListItem => {
+        setListItemsData(listItemsData.concat(newListItem))
+      });
+  }
+
+  const updateListItem = (id, formData) => {
+    fetch(`/list_items/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -56,31 +81,44 @@ function App() {
       body: JSON.stringify(formData)
     })
       .then(res => res.json())
-      .then(updatedComment => {
-        // pessimistically update the dog in state after we get a response from the api
-        setCommentData(commentData.map((comment) => (comment.id === parseInt(id) ? updatedComment : comment)));
+      .then(updatedListItem => {
+        // pessimistically update the game in state after we get a response from the api
+        setListItemsData(listItemsData.map((listItem) => (listItem.id === parseInt(id) ? updatedListItem : listItem)));
         console.log(history)
         // history.push(`/comments`);
       });
   }
 
-  // const deleteComment = (comment_id) => {
+  // const deleteListItem = (listItem_id) => {
   //     // optimistically update the ui
-  //     setCommentData(commentData.filter(comment => comment.id !== parseInt(comment_id)))
+  //     setListItemsData(listItemsData.filter(listItem => listItem.id !== parseInt(listItem_id)))
   //     // update the API
-  //     fetch(`/comments/${comment_id}`, {
+  //     fetch(`/list_items/${listItem_id}`, {
   //       method: 'DELETE',
   //       headers: { Accept: 'application/json' }
   //     })
   //       .then(res => res.json())
-  //       .then(deletedComment => {
-  //         console.log('deleted', deletedComment.comment_id)
-  //         if (location.pathname !== "/comments") {
-  //           history.push("/comments")
-  //           window.location.reload()
+  //       .then(deletedListItem => {
+  //         console.log('deleted', deletedListItem.listItem_id)
+  //         if (location.pathname !== "/list_items") {
+  //           history.push("/list_items")
+  //           // window.location.reload()
   //         }
   //       });
   // }
+
+  function deleteListItem(id) {
+    fetch(`/list_items/${id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setListItemsData((listItemData) =>
+        listItemData.filter((listItemData) => listItemData.id !== id)
+        );
+      }
+    });
+  }
+
   if (!user) 
   return (
     <Router>
@@ -88,6 +126,8 @@ function App() {
     <Switch>
     <Route exact path="/">
         <Login onLogin={setUser} />
+      </Route>
+      <Route exact path="/signup">
         <Signup onLogin={setUser} />
       </Route>
     </Switch> 
@@ -102,8 +142,11 @@ return (
       <Route exact path="/">
         <Home />
       </Route>
-       <Route exact path="/gameslist">
-        <GamesList />
+       <Route exact path="/games">
+        <GamesPage gamesData={gamesData} setGamesData={setGamesData}/>
+      </Route>
+      <Route exact path="/backlog">
+        <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} />
       </Route>
     </Switch> 
   </Router>

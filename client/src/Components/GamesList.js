@@ -1,10 +1,10 @@
 import React from "react";
 import GameCard from "./GameCard";
-import Game from "./Game";
+import GamesPage from "./GamesPage";
 
 function GamesList({ games}) {
-    const renderGames = concerts.map((game)=>(
-      <GameCard key={game.id} id={game.id} band_name={game.band_name} name={game.name} image={game.image} date={game.date} time={game.time} genre={game.genre}/>
+    const renderGames = games.map((game)=>(
+      <GameCard key={game.id} id={game.id} title={game.title} genre={game.genre} image={game.image} summary={game.summary} on_PC={game.on_PC} on_Xbox={game.on_Xbox}  on_Playstation={game.on_Playstation} on_Switch={game.on_Switch}/>
       ));
     return (
       <ul className='cards'>
@@ -13,4 +13,4 @@ function GamesList({ games}) {
     );
   }
   
-  export default GameList;
+  export default GamesList;

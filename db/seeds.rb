@@ -25,7 +25,7 @@ Game.create([
         genre:"First Person Shooter",
         image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Halo_-_Combat_Evolved_%28XBox_version_-_box_art%29.jpg/220px-Halo_-_Combat_Evolved_%28XBox_version_-_box_art%29.jpg",
         summary: "Halo is set in the twenty-sixth century, with the player assuming the role of the Master Chief, a cybernetically enhanced supersoldier. The Chief is accompanied by Cortana, an artificial intelligence. Players battle aliens as they attempt to uncover the secrets of the eponymous Halo, a ring-shaped artificial world.",
-        on_PC: true, 
+        on_PC: "true", 
         on_Xbox: true,
         on_Playstation: false,
         on_Switch: false,
@@ -227,18 +227,18 @@ ListItem.create([
     {
         user_id: 1,
         game_id: 3,
-        recommends: null,
+        recommends: nil,
         completed: false,
-        deadline: 7/1/2022,
+        deadline: "2022-07-10",
         time_played: 20,
     },
     {
         user_id: 2,
         game_id: 19,
-        recommends: null,
+        recommends: nil,
         completed: false,
-        deadline: 6/15/2022,
-        time_played: null,
+        deadline: "2022-06-15",
+        time_played: nil,
     }
 ])
 
