@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 // import { button, error, input, FormField, label, textArea } from "../styles";
 
 function Signup({ onLogin }) {
@@ -7,6 +8,8 @@ function Signup({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,13 +32,15 @@ function Signup({ onLogin }) {
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
+    }).then(() => {
+      history.push('/home')
     });
+    
   }
 
   return (
   
     <div class="sign-up-form">
-      <h2 class="signup-label">If you do not have an account with us, please sign up below</h2>
       <h1 class="signup-label"> Sign-Up Here:</h1>
     <form  onSubmit={handleSubmit}>
       <formField>
