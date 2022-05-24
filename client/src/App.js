@@ -128,7 +128,7 @@ function App() {
         <Login onLogin={setUser} />
       </Route>
       <Route exact path="/signup">
-        <Signup onLogin={setUser} />
+        <Signup onLogin={setUser}  />
       </Route>
     </Switch> 
   </Router>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -60,6 +61,10 @@ function Login({ onLogin }) {
         ))}
       </formField>
     </form>
+
+    <h2 class="signup-label">If you do not have an account, please click the below button to sign up!</h2>
+
+    <Link to="/signup"><button>Sign Up</button></Link>
    
     </div>
     

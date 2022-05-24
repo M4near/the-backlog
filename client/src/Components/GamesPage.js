@@ -16,7 +16,7 @@ function GamesPage({renderGames}) {
     }, []);
 
     const filterGames = games.filter((game) => {
-      return game.title.toLowerCase().includes(query.toLowerCase());
+      return game.title.toLowerCase().includes(query.toLowerCase()) || game.genre.toLowerCase().includes(query.toLowerCase());
     });
 
     return (
