@@ -18,11 +18,11 @@ class ApplicationController < ActionController::API
     render json: { errors: exception.record.errors.full_messages }, status: :unprocessable_entity
   end
 
-  def true?(obj)
-    obj.to_s.downcase == "true"
-  end
+  # def true?(obj)
+  #   obj.to_s.downcase == "true"
+  # end
 
-  def false?(obj)
-    obj.to_s.downcase == "false"
-  end
+  # def false?(obj)
+  #   obj.to_s.downcase == "false"
+  # end
 end

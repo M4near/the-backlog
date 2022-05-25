@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :list_items, only: [:index, :create, :update, :show, :destroy]
-  resources :games, only: [:index, :show]
+  resources :games, only: [:index, :show, :create]
   resources :users, only: [:index, :create, :show]
 
   post "/login", to: "sessions#create"

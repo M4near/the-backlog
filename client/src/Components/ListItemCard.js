@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import GamesList from "./GamesList"
 
 
-function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Playstation, on_Switch, addListItem}) {
+function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Playstation, on_Switch, deleteListItem}) {
   const [showAll, setShowAll] = useState(false)
 
   const showMore = () => setShowAll(true);
@@ -16,11 +16,14 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
   const onPS = on_Playstation == true ? "Yes" : "No" 
   const onSwitch = on_Switch == true ? "Yes" : "No" 
 
-  function handleSubmit(id) {
-    let dict = {}
-    dict['game_id'] = id
-    addListItem(dict)
-  }
+  // function handleClick(event) {
+  //   if (summary.length >= 250) {
+  //     return {summary}
+  //   }else{
+     
+  //   }
+  
+  // }
   
 
   if (showAll === false && summary.length > 250) {
@@ -38,9 +41,12 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <button onClick={() => handleSubmit(id)}>Add to Backlog</button>
-              {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
-              <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
+              <button onClick={() => deleteListItem(id)}>Remove from Backlog</button>
+                    <button>Set Deadline</button>
+                    <button>Recommend</button>
+                    <button>Don't Recommend</button>
+                    <button>Completed?</button>
+              
             </div>
     </div>
   
@@ -59,9 +65,12 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <button onClick={() => addListItem(id)}>Add to Backlog</button>
-              {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
-              <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
+              <button onClick={() => deleteListItem(id)}>Remove from Backlog</button>
+                    <button>Set Deadline</button>
+                    <button>Recommend</button>
+                    <button>Don't Recommend</button>
+                    <button>Completed?</button>
+              
             </div>
     </div>
   
@@ -75,29 +84,32 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
 
   
    
-    return (
-      <>
-      <section className="container">
-          <div key={key} class="con-card">
-            <h2 class="title">{title}</h2>
-            <img class="img-single" src={image} alt={title} />
-                  <div class="con">
-                    <p>Genre: {genre}</p>
-                    {/* <p>Summary: {summary.length > 250 ? `${summary.substring(0, 250)}...` : summary}</p> */}
-                    <p>{summary.substring(0, 100)}... <button onClick={showMore}>See More</button></p>
-                    <p>Playable on PC? <strong>{onPC}</strong></p>
-                    <p>Playable on Xbox? <strong>{onXbox}</strong></p>
-                    <p>Playable on Playstation? <strong>{onPS}</strong></p>
-                    <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-                    <button onClick={() => addListItem(id)}>Add to Backlog</button>
-                    {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
-                    <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
-                  </div>
-          </div>
+    // return (
+    //   <>
+    //   <section className="container">
+    //       <div key={key} class="con-card">
+    //         <h2 class="title">{title}</h2>
+    //         <img class="img-single" src={image} alt={title} />
+    //               <div class="con">
+    //                 <p>Genre: {genre}</p>
+    //                 {/* <p>Summary: {summary.length > 250 ? `${summary.substring(0, 250)}...` : summary}</p> */}
+    //                 <p>{summary.substring(0, 100)}... <button onClick={showMore}>See More</button></p>
+    //                 <p>Playable on PC? <strong>{onPC}</strong></p>
+    //                 <p>Playable on Xbox? <strong>{onXbox}</strong></p>
+    //                 <p>Playable on Playstation? <strong>{onPS}</strong></p>
+    //                 <p>Playable on Switch? <strong>{onSwitch}</strong></p>
+    //                 <button onClick={() => deleteListItem(id)}>Remove from Backlog</button>
+    //                 <button>Set Deadline</button>
+    //                 <button>Recommend</button>
+    //                 <button>Don't Recommend</button>
+    //                 <button>Completed?</button>
+                    
+    //               </div>
+    //       </div>
          
-      </section>
-      </>
-    );
+    //   </section>
+    //   </>
+    // );
   }
   
-  export default GameCard;
+  export default ListItemCard;

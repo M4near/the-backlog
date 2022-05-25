@@ -10,6 +10,7 @@ import Backlog from "./Components/Backlog";
 import Home from "./Components/Home";
 import GamesPage from "./Components/GamesPage";
 import GameCard from "./Components/GameCard";
+import NewGameForm from "./Components/NewGameForm";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,11 +35,11 @@ function App() {
       .then((data) => setGamesData(data))
   }, [])
 
-  useEffect(() => {
-    fetch('/list_items')
-      .then(res => res.json())
-      .then((data) => setListItemsData(data))
-  }, [])
+  // useEffect(() => {
+  //   fetch('/list_items')
+  //     .then(res => res.json())
+  //     .then((data) => setListItemsData(data))
+  // }, [])
 
 
   const addGame = (formData) => {
@@ -57,6 +58,7 @@ function App() {
   }
 
   const addListItem = (formData) => {
+    console.log(JSON.stringify(formData))
     fetch('/list_items', {
       method: 'POST',
       headers: {
@@ -68,7 +70,8 @@ function App() {
       .then(res => res.json())
       .then(newListItem => {
         setListItemsData(listItemsData.concat(newListItem))
-      });
+      })
+      ;
   }
 
   const updateListItem = (id, formData) => {
@@ -143,10 +146,13 @@ return (
         <Home />
       </Route>
        <Route exact path="/games">
-        <GamesPage gamesData={gamesData} setGamesData={setGamesData}/>
+        <GamesPage gamesData={gamesData} setGamesData={setGamesData} addListItem={addListItem} />
       </Route>
       <Route exact path="/backlog">
-        <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} />
+        <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} deleteListItem={deleteListItem} />
+      </Route>
+      <Route exact path="/addgame">
+        <NewGameForm addGame={addGame} gamesData={gamesData} setGamesData={setGamesData} />
       </Route>
     </Switch> 
   </Router>

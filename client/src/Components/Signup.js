@@ -32,8 +32,8 @@ function Signup({ onLogin }) {
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
-    }).then(() => {
-      history.push('/home')
+    // }).then(() => {
+    //   history.push('/home')
     });
     
   }
