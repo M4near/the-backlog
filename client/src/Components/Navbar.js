@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 function Navbar({user, setUser}) {
+  const history = useHistory();
   function handleLogout() {
     fetch("/logout",{
       method: "DELETE",
     }).then(() => setUser())
+    // .then(() => {
+    //   history.push('/login')
+    // })
+    // .then(window.location.reload())
   }
 
   if(!user) 
@@ -31,6 +37,7 @@ function Navbar({user, setUser}) {
         <Link className="navBarLink" to="/games">Games</Link>
         <Link className="navBarLink" to="/backlog">Backlog</Link>
         <Link className="navBarLink" to="/" onClick={handleLogout}>Logout</Link>
+        <Link className="navBarLink" to="/addgame">Add Game</Link>
       </nav>
     </header>
 
