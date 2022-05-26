@@ -36,8 +36,8 @@ function Navbar({user, setUser}) {
         <Link className="navBarLink" to="/">Home</Link>
         <Link className="navBarLink" to="/games">Games</Link>
         <Link className="navBarLink" to="/backlog">Backlog</Link>
+        <Link className="navBarLink" to="/addgame">Add A Game</Link>
         <Link className="navBarLink" to="/" onClick={handleLogout}>Logout</Link>
-        <Link className="navBarLink" to="/addgame">Add Game</Link>
       </nav>
     </header>
 

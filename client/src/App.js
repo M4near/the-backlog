@@ -18,6 +18,7 @@ function App() {
   const [listItemsData, setListItemsData] = useState([]);
   const history = useHistory();
   // const location = useLocation();
+  // const [countCompleted, setCountCompleted] = useState()
   
 
   useEffect(() => {
@@ -35,10 +36,16 @@ function App() {
       .then((data) => setGamesData(data))
   }, [])
 
+  useEffect(() => {
+    fetch('/list_items')
+      .then(res => res.json())
+      .then((data) => setListItemsData(data))
+  }, [])
+
   // useEffect(() => {
-  //   fetch('/list_items')
+  //   fetch('/countcompleted')
   //     .then(res => res.json())
-  //     .then((data) => setListItemsData(data))
+  //     .then((data) => setCountCompleted(data))
   // }, [])
 
 
@@ -87,7 +94,8 @@ function App() {
       .then(updatedListItem => {
         // pessimistically update the game in state after we get a response from the api
         setListItemsData(listItemsData.map((listItem) => (listItem.id === parseInt(id) ? updatedListItem : listItem)));
-        console.log(history)
+        console.log(updatedListItem)
+        console.log(listItemsData);
         // history.push(`/comments`);
       });
   }
@@ -149,7 +157,7 @@ return (
         <GamesPage gamesData={gamesData} setGamesData={setGamesData} addListItem={addListItem} />
       </Route>
       <Route exact path="/backlog">
-        <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} deleteListItem={deleteListItem} />
+        <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} deleteListItem={deleteListItem} updateListItem={updateListItem} />
       </Route>
       <Route exact path="/addgame">
         <NewGameForm addGame={addGame} gamesData={gamesData} setGamesData={setGamesData} />
