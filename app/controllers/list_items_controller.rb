@@ -11,7 +11,7 @@ class ListItemsController < ApplicationController
         def create
             # byebug
             @listitem = @current_user.list_items.create!(listitem_params)
-            # render json: listitems, status: :created
+            render json: @listitem, status: :created
         end
     
         def show
@@ -30,6 +30,15 @@ class ListItemsController < ApplicationController
             @listitem.destroy
         end
     
+
+        def count_completed
+           render json: @current_user.list_items.where(completed: true ).count
+        end
+
+        def count_incomplete
+           render json: @current_user.list_items.where(completed: false || nil).count
+        end
+        
         private
     
         def listitem_find
@@ -39,6 +48,8 @@ class ListItemsController < ApplicationController
         def listitem_params
             params.require(:list_item).permit(:user_id, :game_id, :recommends, :completed, :deadline, :time_played, :rank)
         end
+
+       
     
         # def correct_user
         #     listitem = Comment.find_by(id: params[:id])
