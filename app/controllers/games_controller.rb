@@ -15,7 +15,7 @@ class GamesController < ApplicationController
     def create
         # byebug
         @game = Game.create!(game_params)
-        # render json: @games, status: :created
+        render json: @game, status: :created
     end
 
 private
@@ -30,7 +30,7 @@ private
 
     def authorize_game
         unless @current_user == @game.user 
-          redirect_to "/games"
+          redirect_to "/gameslist"
         end
       end
 end

@@ -222,24 +222,24 @@ Game.create([
     }
 ])
 
-puts "Seeding list_items..."
-ListItem.create([
-    {
-        user_id: 1,
-        game_id: 3,
-        recommends: nil,
-        completed: false,
-        deadline: "2022-07-10",
-        time_played: 20,
-    },
-    {
-        user_id: 2,
-        game_id: 19,
-        recommends: nil,
-        completed: false,
-        deadline: "2022-06-15",
-        time_played: nil,
-    }
-])
+# puts "Seeding list_items..."
+# ListItem.create([
+#     {
+#         user_id: 1,
+#         game_id: 3,
+#         recommends: nil,
+#         completed: true,
+#         deadline: "2022-07-10",
+#         time_played: 20,
+#     },
+#     {
+#         user_id: 2,
+#         game_id: 19,
+#         recommends: nil,
+#         completed: false,
+#         deadline: "2022-06-15",
+#         time_played: nil,
+#     }
+# ])
 
 puts "Done seeding!"

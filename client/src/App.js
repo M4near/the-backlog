@@ -42,15 +42,8 @@ function App() {
       .then((data) => setListItemsData(data))
   }, [])
 
-  // useEffect(() => {
-  //   fetch('/countcompleted')
-  //     .then(res => res.json())
-  //     .then((data) => setCountCompleted(data))
-  // }, [])
-
-
   const addGame = (formData) => {
-    fetch('/games', {
+    fetch('/addagame', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +54,8 @@ function App() {
       .then(res => res.json())
       .then(newGame => {
         setGamesData(gamesData.concat(newGame))
-      });
+      })
+        // history.push('/gameslist')
   }
 
   const addListItem = (formData) => {
@@ -153,14 +147,14 @@ return (
       <Route exact path="/">
         <Home />
       </Route>
-       <Route exact path="/games">
+       <Route exact path="/gameslist">
         <GamesPage gamesData={gamesData} setGamesData={setGamesData} addListItem={addListItem} />
       </Route>
       <Route exact path="/backlog">
         <Backlog listItemsData={listItemsData} setListItemsData={setListItemsData} deleteListItem={deleteListItem} updateListItem={updateListItem} />
       </Route>
       <Route exact path="/addgame">
-        <NewGameForm addGame={addGame} gamesData={gamesData} setGamesData={setGamesData} />
+        <NewGameForm addGame={addGame} gamesData={gamesData} setGamesData={setGamesData} history={history} />
       </Route>
     </Switch> 
   </Router>
