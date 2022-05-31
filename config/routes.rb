@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   delete "/logout", to: "sessions#destroy"
-  # get "/gameslist", to: "games#index"
+  get "/gameslist", to: "games#index"
   get "/countcompleted", to: "list_items#count_completed"
   get "/countincomplete", to: "list_items#count_incomplete"
+  post "/addagame", to: "games#create"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

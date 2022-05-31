@@ -24,13 +24,14 @@ function NewGameForm({addGame, setGameData}) {
           on_Playstation,
           on_Switch
         })
+        
       };
 
   
 
     return (
         <>
-      <h1 class="new-game-form-title">Is a game you are looking for not in the list? Add it!</h1>
+      <h1 class="new-game-form-title">Add a game here!</h1>
       <form
         onSubmit={handleSubmit}
         className="addForm"
@@ -61,6 +62,7 @@ function NewGameForm({addGame, setGameData}) {
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
             >
+            <option >Select a Genre</option>
             <option value= "First Person Shooter">First Person Shooter (FPS)</option>
             <option value= "Action Role-Playing">Action Role-Playing</option>
             <option value= "Action-adventure">Action-adventure</option>
@@ -118,8 +120,9 @@ function NewGameForm({addGame, setGameData}) {
             value={on_PC}
             onChange={(e) => setOn_PC(e.target.value)}
             >
+            <option default value= "false">No</option>
             <option value= "true">Yes</option>
-            <option value= "false">No</option>
+            
             </select>
         </fieldset>
 
@@ -136,8 +139,8 @@ function NewGameForm({addGame, setGameData}) {
             value={on_Xbox}
             onChange={(e) => setOn_Xbox(e.target.value)}
             >
+            <option default value= "false">No</option>
             <option value= "true">Yes</option>
-            <option value= "false">No</option>
             </select>
         </fieldset>
 
@@ -154,8 +157,8 @@ function NewGameForm({addGame, setGameData}) {
             value={on_Playstation}
             onChange={(e) => setOn_Playstation(e.target.value)}
             >
+            <option default value= "false">No</option>
             <option value= "true">Yes</option>
-            <option value= "false">No</option>
             </select>
         </fieldset>
 
@@ -172,8 +175,8 @@ function NewGameForm({addGame, setGameData}) {
             value={on_Switch}
             onChange={(e) => setOn_Switch(e.target.value)}
             >
+            <option default value= "false">No</option>
             <option value= "true">Yes</option>
-            <option value= "false">No</option>
             </select>
         </fieldset>
 

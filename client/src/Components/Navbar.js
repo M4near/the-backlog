@@ -34,8 +34,8 @@ function Navbar({user, setUser}) {
       <nav >
 
         <Link className="navBarLink" to="/">Home</Link>
-        <Link className="navBarLink" to="/games">Games</Link>
-        <Link className="navBarLink" to="/backlog">Backlog</Link>
+        <Link className="navBarLink" to="/gameslist">Games</Link>
+        <Link className="navBarLink" to="/backlog">My Backlog</Link>
         <Link className="navBarLink" to="/addgame">Add A Game</Link>
         <Link className="navBarLink" to="/" onClick={handleLogout}>Logout</Link>
       </nav>
