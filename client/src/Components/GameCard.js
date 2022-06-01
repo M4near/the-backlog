@@ -38,7 +38,7 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <button onClick={() => handleSubmit(id)}>Add to Backlog</button>
+              <button class="button-85" onClick={() => handleSubmit(id)}>Add to Backlog</button>
               {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
               <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
             </div>
@@ -59,7 +59,7 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <button onClick={() => addListItem(id)}>Add to Backlog</button>
+              <button class="button-85" onClick={() => addListItem(id)}>Add to Backlog</button>
               {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
               <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
             </div>
@@ -89,7 +89,7 @@ function GameCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on_Pla
                     <p>Playable on Xbox? <strong>{onXbox}</strong></p>
                     <p>Playable on Playstation? <strong>{onPS}</strong></p>
                     <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-                    <button onClick={() => addListItem(id)}>Add to Backlog</button>
+                    <button class="button-85" onClick={() => addListItem(id)}>Add to Backlog</button>
                     {/* <Link to={`/concerts/${id}`}><button class="button-85">See More</button></Link><br></br>
                     <Link to={`/comments`}><button button class="button-85">Comment</button></Link> */}
                   </div>

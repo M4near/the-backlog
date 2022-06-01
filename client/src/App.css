@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Damion|Work+Sans:900';
 /* .App {
   text-align: center;
 } */
@@ -37,15 +38,405 @@
   }
 } */
 
+html { width: 100%; 
+  height:100%; 
+  overflow:hidden; 
+}
 
+body { 
+padding-top: 0px;
+overflow: hidden scroll;
+width: 100%;
+height:100%;
+font-family: 'Open Sans', sans-serif;
+background: #450547;
+background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #450547 100%);
+background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#450547 100%);
+background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#450547 100%);
+background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#450547 100%);
+background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#450547 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#450547',GradientType=1 );
+}
 
-.navBarHeader {
+/* Main Background for App */
+
+div#root {
+  height: 100vh;
+}
+
+/* Logo & NavBar */
+
+/* .navBarHeader {
   margin: 0 auto;
   width: 100%;
-  /* display: center; */
+
   text-align: center;
-}
+}*/
 
 .navBarLink {
   margin: 5%
+} 
+
+.logo{
+  height: 300px;
+  margin-top: 2px;
+  /* padding: 20px; */
+  
+  text-align: center;
+  color: #f2efef;
+  font-size: calc(28px + 2vmin);
+
+  background-image:
+   url(https://wallpapercave.com/wp/wp2343900.png);
+  background-size: cover;
+  background-position: center 56%;
+  text-decoration: underline;
 }
+
+.logo-name{
+  padding-top: 115px;
+  font-weight: 400;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.logo-sub{
+  font-family: 'Damion', cursive;
+  padding-bottom: 115px;
+  margin-top: 0px;
+  font-weight: 200;
+}
+
+.nav-bar {
+  height: 75px;
+  background-color: #2a1c24;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  display: block;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-bar a{
+  color: rgb(242, 168, 168);
+  font-size:larger;
+  font-family: 'Electrolize', sans-serif;
+  
+}
+
+/* Log in & Sign in Sect */
+
+.login-bg form {
+  width: 300px;
+  margin: 0 auto;
+  color: rgb(244, 238, 238);
+  
+}
+
+.sign-up-form form{
+  width: 300px;
+  margin: 0 auto;
+  color: #fff;
+  height: 200px;
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+
+.login-label{
+  text-align: center;
+  color: #e45399;
+}
+
+.signup-label{
+  text-align: center;
+  color: #e45399;
+}
+
+.btm-space{
+  height: 10px;
+}
+
+.signUpBtn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* end */
+
+.login { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width:300px;
+  height:300px;
+}
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+input { 
+  width: 100%; 
+  margin-bottom: 10px; 
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+.Home{
+  
+  margin: 100px;
+  text-align: center;
+ width: fit-content;
+ display: block;
+ overflow: hidden; 
+ display: block;
+ padding-bottom: 100%;
+ color:#e45399;
+ font-weight: 500px;
+ /* overflow: scroll; */
+ margin-bottom: 200px;
+ font-family: 'Work Sans', sans-serif;
+ font-size: 30px;
+ word-spacing: 10px;
+ font-weight: 600px;
+} 
+
+div.home{
+  padding: 0px;
+}
+
+.card{
+  width: 300px;
+}
+
+.card-image{
+  height: 300px;
+}
+
+.searchbar {
+  padding-top: 30px;
+  margin-left: 90px;
+  font-size: 16px;
+  margin-right: 20px;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+
+}
+
+.search-box {
+  width: 270px;
+  height: 110px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+  display: inline-table;
+  text-align: right;
+}
+
+.con-card{
+  margin-bottom: 50px;
+  border: inset;
+  border-width: 10px;
+  width:min-content;
+  margin-right: 30px;
+  margin-left: 50px;
+  display: inline-table;
+  padding-bottom: 5px;
+  border-color: #f222ff;
+}
+
+ section.container {
+  display: inline-block;
+  
+} 
+
+.title{ 
+  width: 500px;
+  text-align: center;
+  padding: 10px;
+  color: #e45399;
+  text-decoration: underline;
+}
+
+.con{
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(242, 168, 168);
+  
+}
+
+.con-card-single{
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border: inset;
+  border-width: 10px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left:auto;
+  display: block;
+  overflow: hidden;
+}
+
+.title-single{
+  width: 500px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(242, 168, 168);
+  text-decoration: underline;
+}
+
+.con-single{
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(242, 168, 168);
+}
+
+.img-single{
+  /* background-size: cover;
+  background-position: center 56%; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.com-card-btn,
+.com-btn,
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: rgb(225, 161, 161);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0;
+  display: inline-block;
+}
+
+.com-card-btn:before,
+.com-btn:before,
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ffd319,
+    #ff901f,
+    #ff2975,
+    #f222ff,
+    #8c1eff,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* .com-card-btn:after,
+.com-btn:after,
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(154, 90, 90);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+} */
+
+
+.card-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.con form{
+  width: 300px;
+  margin: 0 auto;
+  /* color: #fff; */
+  height: 100px;
+  /* margin-top: 15px;
+  margin-bottom: 100px; */
+}
+
+.new-game-form-title{
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  color: #e45399;
+  margin-top: 50px;
+  
+}
+
+.newGameFieldset{
+  margin-left: 500px;
+  margin-right: 550px;
+  color: #e45399;
+  display: block;
+  font-size: 20px;
+ border-radius: 10px;
+ border-width: 6px;
+ border-color: #f222ff;
+ word-spacing: 2px;
+ }
+
+ .newGameFieldset input{
+  width:99%;
+ }
+
+ .newGameFieldset button{
+  position: center;
+  display: inline-block;
+ }
+
+ .backlog{
+  color: #e45399;
+  font-family: 'Work Sans', sans-serif;
+ }

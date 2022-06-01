@@ -64,7 +64,7 @@ function Login({ onLogin }) {
 
     <h2 class="signup-label">If you do not have an account, please click the below button to sign up!</h2>
 
-    <Link to="/signup"><button>Sign Up</button></Link>
+    <Link to="/signup"><button class="signUpBtn">Sign Up</button></Link>
    
     </div>
     
