@@ -48,8 +48,8 @@ function Backlog({listItemsData, setListItemsData, deleteListItem, updateListIte
       <button onClick={showAllGames}>Show All Games</button>
       <button onClick={filterOutCompletedGames}>Show Uncompleted Games</button>
       {/* <button onClick={showOnlyCompletedGames}>Show Completed Games</button> */}
-     <p> Number of Completed Games: {countCompleted}</p>
-     <p>Number of Uncompleted Games:{countIncomplete}</p>
+     <p class="backlog"> Number of Completed Games: {countCompleted}</p>
+     <p class="backlog">Number of Uncompleted Games: {countIncomplete}</p>
     {renderListItems}
     </div>
     

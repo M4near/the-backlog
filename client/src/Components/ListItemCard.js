@@ -69,8 +69,8 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <p>Completed? <strong>{complete}</strong></p> <button onClick={() => handleCompleted()}>Completed</button>
-              <p>Recommend? <strong>{recommended}</strong></p><button onClick={() => handleRecommends()}>Recommend</button>
+              <p>Completed? <strong>{complete}</strong></p> <button class="button-85" onClick={() => handleCompleted()}>Completed</button>
+              <p>Recommend? <strong>{recommended}</strong></p><button class="button-85" onClick={() => handleRecommends()}>Recommend</button>
               <p>Deadline <strong>{displayDeadline}</strong></p>
               <form onSubmit={handleDeadline} >
                     <label >
@@ -82,7 +82,7 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
                       placeholder="YYYY-MM-DD"
                       onChange={(e) => setUserDeadline(e.target.value)}
                     />
-                  <button type="submit" >
+                  <button class="button-85" type="submit" >
                     Update
                   </button>
                   </form>
@@ -96,12 +96,12 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
                       value={additionalTimePlayed}
                       onChange={(e) => setAdditonalTimePlayed(e.target.value)}
                     />
-                  <button type="submit" >
+                  <button class="button-85" type="submit" >
                     Update Time Played
                   </button>
                   </form>
               {/* <button>Rank</button> */}
-              <button onClick={() => deleteListItem(id)}>Remove from Backlog</button>
+              <button class="button-85" onClick={() => deleteListItem(id)}>Remove from Backlog</button>
               
             </div>
     </div>
@@ -121,8 +121,8 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
               <p>Playable on Xbox? <strong>{onXbox}</strong></p>
               <p>Playable on Playstation? <strong>{onPS}</strong></p>
               <p>Playable on Switch? <strong>{onSwitch}</strong></p>
-              <p>Completed? <strong>{complete}</strong></p> <button onClick={() => handleCompleted()}>Completed</button>
-              <p>Recommend? <strong>{recommended}</strong></p><button onClick={() => handleRecommends()}>Recommend</button>
+              <p>Completed? <strong>{complete}</strong></p> <button class="button-85" onClick={() => handleCompleted()}>Completed</button>
+              <p>Recommend? <strong>{recommended}</strong></p><button class="button-85" onClick={() => handleRecommends()}>Recommend</button>
               <p>Deadline <strong>{displayDeadline}</strong></p>
               <form onSubmit={handleDeadline} >
                     <label >
@@ -134,7 +134,7 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
                       placeholder="YYYY-MM-DD"
                       onChange={(e) => setUserDeadline(e.target.value)}
                     />
-                  <button type="submit" >
+                  <button class="button-85" type="submit" >
                     Update
                   </button>
                   </form>
@@ -148,12 +148,12 @@ function ListItemCard({key, id, title, genre, image, summary, on_PC, on_Xbox, on
                       value={additionalTimePlayed}
                       onChange={(e) => setAdditonalTimePlayed(e.target.value)}
                     />
-                  <button type="submit" >
+                  <button class="button-85" type="submit" >
                     Update Time Played
                   </button>
                   </form>
               {/* <button>Rank</button> */}
-              <button onClick={() => deleteListItem(id)}>Remove from Backlog</button>
+              <button class="button-85" onClick={() => deleteListItem(id)}>Remove from Backlog</button>
               
             </div>
     </div>
